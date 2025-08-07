@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авиадвигателестроение - история и современные технологии</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .demo-label {
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        nav {
+            background: #004080;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            margin: 0 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #f1c40f;
+            transform: translateY(-2px);
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        h2, h3 {
+            color: #003366;
+      
+        }
+         h1 {
+            color: #ffffff;
+             }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #004080;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #004080;
+        }
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .about-project {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        .history-section {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .blueprint {
+            flex: 1;
+            background: #e6f2ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .history-timeline {
+            flex: 2;
+        }
+        .scientist-quote {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+        .scientist-photo {
+            flex: 1;
+            text-align: center;
+        }
+        .quote {
+            flex: 2;
+            font-style: italic;
+            position: relative;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: #004080;
+            opacity: 0.2;
+            position: absolute;
+            top: -1rem;
+            left: 0;
+        }
+        .modern-aviation {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .engineers {
+            flex: 1;
+        }
+        .engineer {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .aircraft-scheme {
+            flex: 2;
+            text-align: center;
+        }
+        .engine-scheme {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .engine-diagram {
+            flex: 2;
+            text-align: center;
+        }
+        .components-list {
+            flex: 1;
+            background: #e6f2ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .engine-types {
+            margin-top: 2rem;
+        }
+        .engine-types-scheme {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .engine-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .engine-photo {
+            background: #f0f0f0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .engine-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .blueprint-img {
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .about-project, .history-section, .scientist-quote, .modern-aviation, .engine-scheme {
+                flex-direction: column;
+            }
+            .engine-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="demo-label">Демонстративная модель авиадвигателя</div>
+            <h1>Авиадвигателестроение</h1>
+            <p></p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">О проекте</a>
+        <a href="#history">История</a>
+        <a href="#modern">Современная авиация</a>
+        <a href="#types">Типы двигателей</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>О нашем проекте</h2>
+            <div class="about-project">
+                <div class="about-text">
+                    <h3>Что такое авиастроение?</h3>
+                    <p>Авиастроение — это отрасль промышленности, занимающаяся разработкой, производством и испытаниями летательных аппаратов и их компонентов. Это сложнейшая инженерная задача, сочетающая в себе достижения материаловедения, аэродинамики, двигателестроения и электроники.</p>
+                    <p>Современные авиационные двигатели — это вершина инженерной мысли, где каждая деталь просчитана до микрона, а материалы работают на пределе своих возможностей.</p>
+                    
+                    
+                    <p>&nbsp;</p>
+                    
+                    <h3>Актуальность</h3>
+                    <p>АКТУАЛЬНОСТЬ ИЗУЧЕНИЯ ТЕМЫ АВИАДВИГАТЕЛЕСТРОЕНИЯ связана с необходимостью улучшения авиационных технологий. Важно понимать влияние конструкции двигателей на безопасность и эффективность полётов.  
+Стоит отметить, что авиационное двигателестроение входит в число самых наукоёмких отраслей промышленности и стимулирует научно-техническое развитие других секторов. Именно поэтому наиболее актуально изучение этой темы в рамках образовательной программы "Академия Первых".</p>
+                </div>
+                <div class="about-image">
+                    <img src="двигатель.jpg" alt="Разрез авиадвигателя" style="max-width: 500px;">
+                    <p>Разрез современного турбореактивного двигателя</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <h2>История авиадвигателестроения</h2>
+            <p>История авиационных двигателей — это эволюционный путь от примитивных силовых установок до сложнейших турбин, отражающий технологический прогресс человечества.</p>
+            
+            <div class="history-section">
+                <div class="blueprint">
+                    <h3>Первый чертёж</h3>
+                    <img src="да винчи.jpg" alt="Старый чертёж" class="blueprint-img">
+                    <p>Эскиз летательного аппарата Леонардо да Винчи (1488-1489)</p>
+                </div>
+                
+                <div class="history-timeline">
+                    <h3>Основные моиенты истории авиа двиготели строения</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1903</div>
+                        <div class="timeline-content">Братья Райт совершают первый управляемый полёт на самолёте с поршневым двигателем.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1930</div>
+                        <div class="timeline-content">Фрэнк Уиттл и Ганс фон Охайн независимо разрабатывают концепцию реактивного двигателя.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1939</div>
+                        <div class="timeline-content">Первый полёт самолёта с турбореактивным двигателем Heinkel He 178 (Германия).</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1944</div>
+                        <div class="timeline-content">Запуск в серию первого массового реактивного истребителя Messerschmitt Me 262.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1952</div>
+                        <div class="timeline-content">Первый коммерческий рейс реактивного авиалайнера de Havilland Comet.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scientist-quote">
+                <div class="scientist-photo">
+                    <img src="Н.Е. Жуковский.jpg" alt="Николай Жуковский" style="max-width: 200px;">
+                    <p>Н.Е. Жуковский (1847-1921)</p>
+                </div>
+                <div class="quote">
+                    <p>"Человек не имеет крыльев и по отношению веса своего тела к весу мускулов он в 72 раза слабее птицы... Но я думаю, что он полетит, опираясь не на силу своих мускулов, а на силу своего разума."</p>
+                    <p>— Николай Жуковский, "отец русской авиации"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="modern" class="section">
+            <h2>Современная авиация</h2>
+            <p>Сегодня авиастроение — одна из самых высокотехнологичных и динамично развивающихся отраслей промышленности. Оно охватывает проектирование, производство и обслуживание гражданских, военных и беспилотных летательных аппаратов.</p>
+            
+            <div class="modern-aviation">
+                <div class="engineers">
+                    <h3>Советские инженеры-конструкторы</h3>
+                    <div class="engineer">
+                        <h4>Архип Люлька</h4>
+                        <p>Создатель первого советского турбореактивного двигателя</p>
+                    </div>
+                    <div class="engineer">
+                        <h4>Николай Кузнецов</h4>
+                        <p>Конструктор мощных турбовинтовых двигателей</p>
+                    </div>
+                    <div class="engineer">
+                        <h4>Сергей Изотов</h4>
+                        <p>Разработчик двигателей для вертолётов</p>
+                    </div>
+                </div>
+                
+                <div class="aircraft-scheme">
+                    <img src="компаненты.png" alt="Схема самолёта" style="max-width: 600px;">
+                    <p>Основные компоненты современного самолёта</p>
+                </div>
+                
+                <div class="engineers">
+                    <h3>Российские инженеры</h3>
+                    <div class="engineer">
+                        <h4>Юрий Елисеев</h4>
+                        <p>Главный конструктор ПД-14</p>
+                    </div>
+                    <div class="engineer">
+                        <h4>Александр Иноземцев</h4>
+                        <p>Генеральный конструктор АО "ОДК-Авиадвигатель"</p>
+                    </div>
+                    <div class="engineer">
+                        <h4>Виктор Чуйко</h4>
+                        <p>Разработчик двигателей для истребителей</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="engine-scheme">
+                <div class="engine-diagram">
+                    <img src="схема 2.png" alt="Схема двигателя" style="max-width: 600px;">
+                    <p>Схема современного турбореактивного двигателя</p>
+                </div>
+                <div class="components-list">
+                    <h3>Основные компоненты</h3>
+                    <ul>
+                        <li>Воздухозаборник</li>
+                        <li>Компрессор</li>
+                        <li>Камера сгорания</li>
+                        <li>Турбина</li>
+                        <li>Сопло</li>
+                        <li>Система управления</li>
+                        <li>Топливная система</li>
+                        <li>Масляная система</li>
+                        <li>Система охлаждения</li>
+                        <li>я забыл что там ещё есть</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="types" class="section">
+            <h2>Типы современных авиадвигателей</h2>
+            <p>Современная авиация использует несколько основных типов двигателей, каждый из которых имеет свои преимущества и области применения.</p>
+            
+            <div class="engine-types-scheme">
+                <img src="схема.jpg" alt="Типы двигателей" style="max-width: 800px;">
+                <p>Сравнительная схема типов авиационных двигателей</p>
+            </div>
+            
+            <div class="engine-types">
+                <h3>Основные категории:</h3>
+                <ul>
+                    <li><strong>Поршневые двигатели</strong> - используются на легких самолётах</li>
+                    <li><strong>Турбовинтовые</strong> - для региональных самолётов</li>
+                    <li><strong>Турбореактивные</strong> - для военной авиации</li>
+                    <li><strong>Турбовентиляторные</strong> - для гражданских авиалайнеров</li>
+                    <li><strong>Турбовальные</strong> - для вертолётов</li>
+                    <li><strong>Прямоточные</strong> - для гиперзвуковых аппаратов</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Детали в компасе:</h3>
+            <div class="engine-gallery">
+                <div class="engine-photo">
+                    
+                    <img src="" alt="1">
+                </div>
+                <div class="engine-photo">
+                   
+                    <img src="" alt="2">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="3">
+                </div>
+                <div class="engine-photo">
+                   
+                    <img src="" alt="4">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="5">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="6">
+                </div>
+                <h3 style="margin-top: 2rem;">Детали печатаются:</h3>
+            <div class="engine-gallery">
+                <div class="engine-photo">
+                    
+                    <img src="" alt="1">
+                </div>
+                <div class="engine-photo">
+                   
+                    <img src="" alt="2">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="3">
+                </div>
+                <div class="engine-photo">
+                   
+                    <img src="" alt="4">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="5">
+                </div>
+                <div class="engine-photo">
+                    
+                    <img src="" alt="6">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Проект "Авиадвигателестроение Академия первых 8 отряд"</p>
+            <p>Образовательный ресурс по истории и технологиям авиационных двигателей</p>
+        </div>
+    </footer>
+</body>
+</html>
